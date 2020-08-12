@@ -8,7 +8,7 @@ const path = require("path");
 const port = process.env.PORT || 3000;
 
 const Excel = require("exceljs");
-app.use(express.static(__dirname + "/public"));
+app.use(express.static("public"));
 app.use(
   bodyParser.urlencoded({
     extended: true,
@@ -16,7 +16,7 @@ app.use(
 );
 
 app.get("/", function (req, res) {
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(path.resolve(__dirname, "public", "index.html"));
 });
 
 app.post("/", function (req, res) {
@@ -42,28 +42,30 @@ app.post("/", function (req, res) {
   const bcireg = req.body.bcireg;
 
   let fileName = "profarma_of_" + causelName + ".xlsx";
-  let filePath = path.resolve(__dirname + "temp" + fileName);
+  let filePath = path.resolve(__dirname, "temp", fileName);
+  let excelFilePath = path.resolve(__dirname, "public", "file.xlsx");
+  console.log(excelFilePath);
   // CREATION OF EXCEL FILE
 
   let workbook = new Excel.Workbook(); //creation of new workbook
   //promise function for reading a file
-  const readFilePro = (workbook) => {
-    return new Promise((resolve, reject) => {
-      workbook.xlsx.readFile("file.xlsx", (err, data) => {
-        if (err) reject("file not found");
-        resolve(data);
-      });
-    });
-  };
-  //promise for writing a new file
-  const writeFilePro = (filePath, workbook) => {
-    return new Promise((resolve, reject) => {
-      workbook.xlsx.writeFile(filePath, (err) => {
-        if (err) reject("could not write file");
-        resolve("Success");
-      });
-    });
-  };
+  // const readFilePro = (workbook) => {
+  //   return new Promise((resolve, reject) => {
+  //     workbook.xlsx.readFile(excelFilePath, (err, data) => {
+  //       if (err) reject("file not found");
+  //       resolve(data);
+  //     });
+  //   });
+  // };
+  // //promise for writing a new file
+  // const writeFilePro = (filePath, workbook) => {
+  //   return new Promise((resolve, reject) => {
+  //     workbook.xlsx.writeFile(filePath, (err) => {
+  //       if (err) reject("could not write file");
+  //       resolve("Success");
+  //     });
+  //   });
+  // };
   //promise for deleting file from server
   const deleteFilePro = (filePath) => {
     return new Promise((resolve, reject) => {
@@ -111,7 +113,7 @@ app.post("/", function (req, res) {
   // starting of main function
   const mainFunc = async () => {
     try {
-      await workbook.xlsx.readFile("file.xlsx", (err) => {
+      await workbook.xlsx.readFile(excelFilePath, (err) => {
         console.log(err);
       }); //reading file
       let worksheet = workbook.getWorksheet(1);
