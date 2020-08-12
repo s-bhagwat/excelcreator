@@ -1,0 +1,400 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: linear-gradient(-25deg, #c5c2c2 0%, #96b7c4 100%);
+  font-family: "Noto Sans", sans-serif;
+}
+h1,
+p {
+  text-align: center;
+}
+h1 {
+  margin: 2rem auto;
+}
+footer a {
+  text-decoration: none;
+  color: #444;
+  transition: all 1s ease;
+}
+
+.container {
+  margin: auto;
+  width: 50vw;
+}
+.container * {
+  display: block;
+}
+input {
+  max-width: 100%;
+  width: 100%;
+  font-size: 1.1em;
+  border-radius: 4px;
+  border: none;
+  padding: 0.25em 0.5em;
+  border: 2px solid transparent;
+}
+label {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 1.5rem auto 0.4rem;
+}
+input:focus {
+  border: 2px solid rgb(116, 250, 228);
+  outline: none;
+}
+
+.select-css {
+  display: block;
+  font-size: 16px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 700;
+  color: #444;
+  line-height: 1.3;
+  padding: 0.6em 1.4em 0.5em 0.8em;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  border: 1px solid #aaa;
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+  border-radius: 0.5em;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"),
+    linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+  background-repeat: no-repeat, repeat;
+  background-position: right 0.7em top 50%, 0 0;
+  background-size: 0.65em auto, 100%;
+}
+.select-css::-ms-expand {
+  display: none;
+}
+.select-css:hover {
+  border-color: #888;
+}
+.select-css:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+  box-shadow: 0 0 0 3px -moz-mac-focusring;
+  color: #222;
+  outline: none;
+}
+.select-css option {
+  font-weight: normal;
+}
+
+/************************  CHECKBOX STYLING *******************/
+.checkbox-label {
+  display: inline-block;
+  position: relative;
+  margin: 0.5rem 0 0;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 24px;
+  height: 24px;
+  width: 24px;
+  clear: both;
+  vertical-align: middle;
+}
+
+.checkbox-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox-label .checkbox-custom {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 24px;
+  width: 24px;
+  background-color: transparent;
+  border-radius: 5px;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  border: 2px solid #ffffff;
+}
+
+.checkbox-label input:checked ~ .checkbox-custom {
+  background-color: #ffffff;
+  border-radius: 5px;
+  -webkit-transform: rotate(0deg) scale(1);
+  -ms-transform: rotate(0deg) scale(1);
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+  border: 2px solid #ffffff;
+}
+
+.checkbox-label .checkbox-custom::after {
+  position: absolute;
+  content: "";
+  left: 12px;
+  top: 12px;
+  height: 0px;
+  width: 0px;
+  border-radius: 5px;
+  border: solid #009bff;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(0deg) scale(0);
+  -ms-transform: rotate(0deg) scale(0);
+  transform: rotate(0deg) scale(0);
+  opacity: 1;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+.checkbox-label input:checked ~ .checkbox-custom::after {
+  -webkit-transform: rotate(45deg) scale(1);
+  -ms-transform: rotate(45deg) scale(1);
+  transform: rotate(45deg) scale(1);
+  opacity: 1;
+  left: 8px;
+  top: 3px;
+  width: 6px;
+  height: 12px;
+  border: solid #009bff;
+  border-width: 0 2px 2px 0;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+/* For Ripple Effect */
+.checkbox-label .checkbox-custom::before {
+  position: absolute;
+  content: "";
+  left: 10px;
+  top: 10px;
+  width: 0px;
+  height: 0px;
+  border-radius: 5px;
+  border: 2px solid #ffffff;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+
+.checkbox-label input:checked ~ .checkbox-custom::before {
+  left: -3px;
+  top: -3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 5px;
+  -webkit-transform: scale(3);
+  -ms-transform: scale(3);
+  transform: scale(3);
+  opacity: 0;
+  z-index: 999;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+.checkbox-text {
+  display: inline-block;
+  font-weight: normal;
+  font-size: 1em;
+  vertical-align: bottom;
+  padding-left: 1em;
+}
+/******************************* //STYLING OF CHECKBOX *****************************/
+
+footer {
+  margin: 3rem auto;
+}
+.button {
+  transition: all 4s ease;
+  margin: 3rem auto 0;
+  background: #74fae4;
+  background-image: -webkit-linear-gradient(top, #74fae4, #3acdb5);
+  background-image: -moz-linear-gradient(top, #74fae4, #3acdb5);
+  background-image: -ms-linear-gradient(top, #74fae4, #3acdb5);
+  background-image: -o-linear-gradient(top, #74fae4, #3acdb5);
+  background-image: linear-gradient(to bottom, #74fae4, #3acdb5);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  color: #000000;
+  font-family: Open Sans;
+  font-size: 1.2em;
+  font-weight: 100;
+  padding: 1.3rem;
+  box-shadow: 1px 1px 20px 0px #000000;
+  -webkit-box-shadow: 1px 1px 20px 0px #000000;
+  -moz-box-shadow: 1px 1px 20px 0px #000000;
+
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.button:hover {
+  transition: all 4s ease;
+
+  background: #5cf0b0;
+  background-image: -webkit-linear-gradient(top, #5cf0b0, #278eb2);
+  background-image: -moz-linear-gradient(top, #5cf0b0, #278eb2);
+  background-image: -ms-linear-gradient(top, #5cf0b0, #278eb2);
+  background-image: -o-linear-gradient(top, #5cf0b0, #278eb2);
+  background-image: linear-gradient(to bottom, #5cf0b0, #278eb2);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+/******* ERROR ***********/
+#error {
+  margin-top: 1rem;
+}
+#error p {
+  color: rgb(248, 99, 30);
+}
+/****** SUCCESS **********/
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.before {
+  display: none;
+  visibility: hidden;
+}
+.after {
+  animation: successani 0.5s ease-in-out;
+  transform-origin: center;
+}
+@keyframes successani {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+#success {
+  width: 25rem;
+  height: 30rem;
+  position: fixed;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(44, 222, 112);
+  background: linear-gradient(
+    90deg,
+    rgba(44, 222, 178, 0.945) 0%,
+    rgba(64, 240, 187, 0.903) 39%,
+    rgba(35, 194, 179, 1) 100%
+  );
+  border-radius: 4px;
+}
+#success h2,
+#success a {
+  text-decoration: none;
+  color: #feffff;
+}
+#success h2 {
+  margin-top: 1rem;
+}
+#success a {
+  transition: color 0.3s ease;
+}
+#success a:hover {
+  transition: color 0.3s ease;
+  color: rgb(194, 175, 66);
+}
+#success .success-icon {
+  color: rgb(194, 175, 66);
+  font-size: 5em;
+}
+
+/*******************  MEDIA QUERIES **************************/
+@media only screen and (max-width: 1100px),
+  only screen and (max-device-width: 1100px) {
+  .container {
+    width: 60vw;
+  }
+}
+@media only screen and (max-width: 870px),
+  only screen and (max-device-width: 870px) {
+  .container {
+    width: 70vw;
+  }
+  label {
+    font-size: 1.1em;
+  }
+}
+@media only screen and (max-width: 750px),
+  only screen and (max-device-width: 750px) {
+  .container {
+    width: 80vw;
+  }
+}
+@media only screen and (max-width: 610px),
+  only screen and (max-device-width: 610px) {
+  .container {
+    width: 90vw;
+  }
+  h1 {
+    font-size: 1.5em;
+  }
+  label {
+    font-size: 1em;
+  }
+  .button {
+    font-size: 1.1em;
+    padding: 1.2rem;
+  }
+}
+@media only screen and (max-width: 470px),
+  only screen and (max-device-width: 470px) {
+  h1 {
+    font-size: 1.3em;
+  }
+  .button {
+    font-size: 1em;
+    padding: 1.1rem;
+  }
+  #success {
+    width: 15rem;
+    height: 20rem;
+  }
+  #success h2 {
+    font-size: 1em;
+  }
+}
+@media only screen and (max-width: 400px),
+  only screen and (max-device-width: 400px) {
+  h1 {
+    font-size: 1.2em;
+  }
+  .button {
+    font-size: 0.8em;
+    padding: 1rem;
+  }
+}
+@media only screen and (max-width: 375px),
+  only screen and (max-device-width: 375px) {
+  h1 {
+    font-size: 1em;
+  }
+}

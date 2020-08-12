@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css" />
+    <title>State Bar Council Profarma Form</title>
+
+  </head>
+
+  <body>
+    <h1>Download your profarma from here</h1>
+    <div class="container">
+     
+      <form id="form" action="/" method="post">
+        <label for="enrolment">Enrolment Number</label>
+        <input id="enrolment" type="text" name="enrolment" required/><br />
+
+        <label for="causelName"
+          >Name of advocate (to be printed in short on cause list)</label
+        >
+        <input id="causelName" type="text" name="causelName" required/><br />
+
+        <label for="fullName">Full Name of Advocate</label>
+        <input id="fullName" type="text" name="fullName" required/><br />
+
+        <label for="localName">Name of Advocate in Local Language</label>
+        <input id="localName" type="text" name="localName" required/>
+        <label class="checkbox-label">
+            <input id="nameCheck" type="checkbox" onchange="checkName();">
+            <span class="checkbox-custom rectangular"></span>
+        </label><p class="checkbox-text">Same as full name of advocate</p>
+
+        <label for="dateOfBirth">Date of Birth Of Advocate</label>
+        <input id="dateOfBirth" type="text" name="dateOfBirth" required/><br />
+
+        <label for="gender">Gender</label>
+        <select class="select-css" name="gender" id="gender" required/>
+          <option value="" selected>--Select Gender--</option>
+          <option value="M-Male">M-Male</option>
+          <option value="F-Female">F-Female</option>
+          <option value="T-Transgender">T-Transgender</option>
+      </select>
+
+        <label for="address">Address of Advocate</label>
+        <input id="address" type="text" name="address" required/><br />
+
+
+        <label for="addresslLang">Address of Advocate in Local Language</label>
+        <input id="addresslLang" type="text" name="addresslLang" required/>
+                <label class="checkbox-label">
+            <input id="alc" type="checkbox" onchange="checkAddress();">
+            <span class="checkbox-custom rectangular"></span>
+        </label><p class="checkbox-text">Same as address of advocate</p>
+
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" required/><br />
+
+        <label for="mNumber">Mobile Number of Advocate</label>
+        <input id="mNumber" type="text" name="mNumber" required/><br />
+
+        <label for="wNumber">Whatsapp Number (if any)</label>
+        <input id="wNumber" type="text" name="wNumber" required/>
+                        <label class="checkbox-label">
+            <input id="whatsappCheck" type="checkbox" onchange="checkNumber();">
+            <span class="checkbox-custom rectangular"></span>
+        </label><p class="checkbox-text">Same as Mobile No. of advocate</p>
+
+        <label for="pNumber">Phone Number</label>
+        <input id="pNumber" type="text" name="pNumber" required/>
+                        <label class="checkbox-label">
+            <input id="phoneCheck" type="checkbox" onchange="checkNumber_2();">
+            <span class="checkbox-custom rectangular"></span>
+        </label><p class="checkbox-text">Same as mobile No. of advocate</p>
+
+        <label for="fax">Fax Number</label>
+        <input id="fax" type="text" name="fax" required/><br />
+
+
+        <label for="officeAddress"
+          >Office Address of Advocate where he Practice</label
+        >
+        <input id="officeAddress" type="text" name="officeAddress" required/>
+                <label class="checkbox-label">
+            <input id="aoc" type="checkbox" onchange="checkAddress_2();">
+            <span class="checkbox-custom rectangular"></span>
+        </label><p class="checkbox-text">Same as address of advocate</p>
+
+        <label for="pinCode">Pin Code</label>
+        <input id="pinCode" type="text" name="pinCode" required/><br />
+
+        <label for="district">District</label>
+        <input id="district" type="text" name="district" required/><br />
+
+        <label for="taluka">Taluka</label>
+        <input id="taluka" type="text" name="taluka" required/><br />
+
+        <label for="officelAddress">Office Address Of Advocate in Local</label>
+        <input id="officelAddress" type="text" name="officelAddress" required/><br />
+
+        <label for="type">Type of Advocate</label>
+        <select class="select-css" name="type" id="type" onchange="checkSelect();" required/>
+          <option value="" selected>--Select Type--</option>
+          <option value="Individual-1">Individual-1</option>
+          <option value="Firm-2">Firm-2</option>
+          <option value="Company-3">Company-3</option>
+      </select>
+
+        <label for="bcireg"
+          >If Firm or Company, Registration Number in BCI</label
+        >
+        <input id="bcireg" type="text" name="bcireg" /><br />
+
+        <button class="button" type="submit">Download Profarma</button>
+      </form>
+       <div id="error"></div>
+       <div id="success" class="before"><div class="flex">
+         <i class="fa fa-check-circle success-icon"></i>
+         <h2>Check Your Downloads</h2>
+      <h2><a href="/">Download another profarma</a></h2></div>
+       </div>
+    </div>
+    <footer>
+      <p>Made by <a href="https://github.com/s-bhagwat">Sarthak Bhagwat</a></p>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>
