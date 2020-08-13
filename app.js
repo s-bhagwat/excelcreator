@@ -55,26 +55,8 @@ app.post("/", function (req, res) {
   const bcireg = req.body.bcireg;
 
   let fileName = "profarma_of_" + causelName + ".xlsx";
-  let filePath = path.resolve(__dirname, "temp", fileName);
+  let filePath = path.resolve(__dirname, "public", "temp", fileName);
 
-  //promise function for reading a file
-  // const readFilePro = (workbook) => {
-  //   return new Promise((resolve, reject) => {
-  //     workbook.xlsx.readFile(excelFilePath, (err, data) => {
-  //       if (err) reject("file not found");
-  //       resolve(data);
-  //     });
-  //   });
-  // };
-  // //promise for writing a new file
-  // const writeFilePro = (filePath, workbook) => {
-  //   return new Promise((resolve, reject) => {
-  //     workbook.xlsx.writeFile(filePath, (err) => {
-  //       if (err) reject("could not write file");
-  //       resolve("Success");
-  //     });
-  //   });
-  // };
   //promise for deleting file from server
   const deleteFilePro = (filePath) => {
     return new Promise((resolve, reject) => {

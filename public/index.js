@@ -15,12 +15,12 @@ form.addEventListener("submit", (e) => {
   if (mNumber.value.length !== 10) {
     messages.push("Please input a 10 digit mobile number");
   }
-  if (!Number.isInteger(Number(wNumber.value))) {
-    messages.push("Please input a valid whatsapp number");
-  }
-  if (wNumber.value.length !== 10) {
-    messages.push("Please input a 10 digit whatsapp number");
-  }
+  // if (!Number.isInteger(Number(wNumber.value))) {
+  //   messages.push("Please input a valid whatsapp number");
+  // }
+  // if (wNumber.value.length !== 10) {
+  //   messages.push("Please input a 10 digit whatsapp number");
+  //}
   if (!Number.isInteger(Number(pNumber.value))) {
     messages.push("Please input a valid phone number");
   }
