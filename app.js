@@ -8,6 +8,19 @@ const path = require("path");
 const port = process.env.PORT || 3000;
 
 const Excel = require("exceljs");
+
+let excelFilePath = path.resolve(__dirname, "public", "file.xlsx");
+
+// CREATION OF EXCEL FILE
+
+let workbook = new Excel.Workbook(); //creation of new workbook
+const readFileFunc = async () => {
+  await workbook.xlsx.readFile(excelFilePath, (err) => {
+    console.log(err);
+  }); //reading file
+};
+readFileFunc();
+
 app.use(express.static("public"));
 app.use(
   bodyParser.urlencoded({
@@ -43,11 +56,7 @@ app.post("/", function (req, res) {
 
   let fileName = "profarma_of_" + causelName + ".xlsx";
   let filePath = path.resolve(__dirname, "temp", fileName);
-  let excelFilePath = path.resolve(__dirname, "public", "file.xlsx");
-  console.log(excelFilePath);
-  // CREATION OF EXCEL FILE
 
-  let workbook = new Excel.Workbook(); //creation of new workbook
   //promise function for reading a file
   // const readFilePro = (workbook) => {
   //   return new Promise((resolve, reject) => {
@@ -113,9 +122,6 @@ app.post("/", function (req, res) {
   // starting of main function
   const mainFunc = async () => {
     try {
-      await workbook.xlsx.readFile(excelFilePath, (err) => {
-        console.log(err);
-      }); //reading file
       let worksheet = workbook.getWorksheet(1);
       for (let i = 5, k = 0; i < 14; i += 4, k++) {
         let row = worksheet.getRow(i);
