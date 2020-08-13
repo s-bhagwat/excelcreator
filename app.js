@@ -55,7 +55,7 @@ app.post("/", function (req, res) {
   const bcireg = req.body.bcireg;
 
   let fileName = "profarma_of_" + causelName + ".xlsx";
-  let filePath = path.resolve(__dirname, "public", "temp", fileName);
+  let filePath = path.join(__dirname, "public", fileName);
 
   //promise for deleting file from server
   const deleteFilePro = (filePath) => {
